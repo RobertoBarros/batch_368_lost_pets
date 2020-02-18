@@ -1,0 +1,24 @@
+<h1>Pet Detail</h1>
+
+<p>
+  <strong>Species:</strong>
+  <%= @pet.species %></p>
+<p>
+  <strong>Description:</strong>
+  <%= @pet.description %>
+</p>
+<p>
+  <strong>Found At:</strong>
+  <%= time_ago_in_words(@pet.found_at) %>
+</p>
+
+<p>
+  <%= link_to 'List all', root_path, class: 'btn btn-info' %>
+</p>
+<p>
+  <%= link_to 'Edit this pet', edit_pet_path(@pet), class: 'btn btn-warning' %>
+</p>
+
+<p>
+  <%= link_to 'Pet Found', pet_path(@pet), method: :delete, class: 'btn btn-danger', data: { confirm: 'Are you sure?' } %>
+</p>

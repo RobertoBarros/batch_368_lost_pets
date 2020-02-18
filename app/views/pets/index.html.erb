@@ -1,0 +1,12 @@
+<h1>All Lost Pets</h1>
+
+<ul class="list-group">
+  <% @pets.each do |pet| %>
+    <li class="list-group-item">
+      <%= link_to 'Details', pet_path(pet), class: 'btn btn-info mr-3' %>
+      <%= pet.species %> found at <%= time_ago_in_words(pet.found_at) %>
+    </li>
+  <% end %>
+</ul>
+
+<%= link_to 'Inform new lost Pet', new_pet_path, class: 'btn btn-primary mt-5' %>
